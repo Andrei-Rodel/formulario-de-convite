@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #121212;
+  background-color: #181820;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -13,12 +13,13 @@ body {
 .container {
   max-width: 600px;
   width: 100%;
-  margin: 40px auto;
+  margin: .5rem auto;
   background: #181820;
   color: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
   padding: 40px 40px 32px 40px;
+  margin-left: 300px; /* igual à largura do brand-fixed */
 }
 
 h2 {
@@ -87,6 +88,11 @@ input, textarea, select {
   cursor: pointer;
 }
 
+.cores button.cor-selecionada {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #5b6ef8;
+}
+
 .temas {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -96,15 +102,22 @@ input, textarea, select {
 }
 
 .tema-card {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  transition: border 0.2s;
   min-width: 0;
   background-color: #2a2a2a;
-  border-radius: 12px;
   text-align: center;
-  padding: 20px 5px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.tema-card.tema-selecionado {
+  border: 2px solid #5b6ef8;
+  background: #23232b;
 }
 
 .tema-card img {
@@ -219,4 +232,26 @@ body.tema-branco .cores button {
 }
 .termo-uso-checkbox.align-center {
   justify-content: space-between;
+}
+
+.brand-fixed {
+  position: fixed;
+  top: 45px;
+  left: 25px;
+  height: 600px;
+  width: 300px;
+  background: #181820;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  z-index: 100;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  padding: 0;
+}
+
+.brand-logo {
+  width: 300px;
+  height: 600px;
+  object-fit: contain;
+  display: block;
 }

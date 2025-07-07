@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+<div class="brand-fixed">
+  <img src="assets/brand.svg" alt="Brand" class="brand-logo">
+</div>
 <div class="container">
     <h2>🎉 Crie seu convite</h2>
 
@@ -58,7 +61,7 @@
       <img src="icons/pincel.svg" alt="Personalização" style="width: 20px; height: 20px; vertical-align: middle;"> Personalização
     </label>
     <div class="cores">
-        <button style="background-color: #5b6ef8;"></button>
+        <button class="cor-selecionada" style="background-color: #5b6ef8;"></button>
         <button style="background-color: #c74ef4;"></button>
         <button style="background-color: #f04fc4;"></button>
         <button style="background-color: #f76f50;"></button>
@@ -73,7 +76,7 @@
 
     <label>Tema do evento</label>
     <div class="temas">
-      <div class="tema-card">
+      <div class="tema-card tema-selecionado">
         <img src="assets/aniversario.svg" alt="Aniversário" />
         <p>Aniversário</p>
       </div>
