@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Festivite - Criar Convite</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>🎉 Crie seu convite</h2>
+
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px;">
+        <img src="icons/calendario.svg" alt="Calendário" style="width: 22px; height: 22px;">
+        <span style="font-size: 18px; font-weight: 600;">Sobre o evento</span>
+    </div>
+
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" placeholder="Nome do evento" />
+
+    <div class="data-evento">
+        <div style="flex:1;">
+            <label for="inicio">Início</label>
+            <input type="date" id="inicio" placeholder="DD/MM/AAAA, --:--" />
+        </div>
+        <div style="flex:1;">
+            <label for="fim">Fim</label>
+            <input type="date" id="fim" placeholder="DD/MM/AAAA, --:--" />
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 10px; align-items: flex-end;">
+        <div style="flex:1;">
+            <label for="tipo">Tipo</label>
+            <div class="tipo">
+                <button onclick="selecionarTipo(this)" class="active">
+                    <img src="icons/documentos.svg" alt="Documento" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;">
+                    Presencial
+                </button>
+                <button onclick="selecionarTipo(this)">
+                    <img src="icons/camera.svg" alt="Online" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;">
+                    Online
+                </button>
+            </div>
+        </div>
+        <div style="flex:2;">
+            <label for="local">Local</label>
+            <input type="text" id="local" placeholder="Link ou endereço" />
+        </div>
+    </div>
+
+    <label for="descricao">Descrição</label>
+    <textarea id="descricao" rows="4" placeholder="Escreva sobre os detalhes do evento"></textarea>
+
+    <label style="display: flex; align-items: center; gap: 6px;">
+      <img src="icons/pincel.svg" alt="Personalização" style="width: 20px; height: 20px; vertical-align: middle;"> Personalização
+    </label>
+    <div class="cores">
+        <button style="background-color: #5b6ef8;"></button>
+        <button style="background-color: #c74ef4;"></button>
+        <button style="background-color: #f04fc4;"></button>
+        <button style="background-color: #f76f50;"></button>
+        <button style="background-color: #f0a84f;"></button>
+        <button style="background-color: #4ff084;"></button>
+        <button style="background-color: #4ff0e3;"></button>
+        <button style="background-color: #00bfff;"></button>
+        <button style="background-color: #ffe600;"></button>
+        <button style="background-color: #ff007f;"></button>
+        <button style="background-color: #000000;"></button>
+    </div>
+
+    <label>Tema do evento</label>
+    <div class="temas">
+      <div class="tema-card">
+        <img src="assets/aniversario.svg" alt="Aniversário" />
+        <p>Aniversário</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/infantil.svg" alt="Infantil" />
+        <p>Infantil</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/formatura.svg" alt="Formatura" />
+        <p>Formatura</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/casamento.svg" alt="Casamento" />
+        <p>Casamento</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/cha de bebe.svg" alt="cha de bebe" />
+        <p>cha de bebe</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/cha de panela.svg" alt="cha de panela" />
+        <p>cha de panela</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/carnaval.svg" alt="carnaval" />
+        <p>carnaval</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/pascoa.svg" alt="pascoa" />
+        <p>pascoa</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/sao joao.svg" alt="sao joao" />
+        <p>sao joao</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/halloween.svg" alt="halloween" />
+        <p>halloween</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/natal.svg" alt="natal" />
+        <p>natal</p>
+      </div>
+      <div class="tema-card">
+        <img src="assets/outro.svg" alt="outro" />
+        <p>outro</p>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 32px; align-items: center; margin: 18px 0;">
+        <div>
+            <label for="toggle-tema">Estilo</label>
+            <div class="estilo-tema-container">
+                <span id="tema-label">Escuro</span>
+                <label class="switch">
+                  <input type="checkbox" id="toggle-tema">
+                  <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <label for="foto-capa">Foto de capa</label>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+                <label for="foto-capa" style="display: inline-flex; align-items: center; gap: 8px; background: #23232b; color: #fff; border-radius: 6px; padding: 8px 18px; cursor: pointer; border: 1px solid #444; margin: 0;">
+                    <img src="icons/exportar.svg" alt="Selecionar" style="width: 18px; height: 18px;">
+                    Selecionar
+                    <input type="file" id="foto-capa" accept="image/*" style="display: none;" onchange="document.getElementById('nome-arquivo').textContent = this.files[0] ? this.files[0].name : 'nenhum arquivo selecionado';">
+                </label>
+                <span id="nome-arquivo" style="color: #ccc; font-size: 13px;">Nenhum arquivo selecionado</span>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 28px; font-size: 1.1em; display: flex; align-items: center; gap: 8px;">
+        <img src="icons/presencial.svg" alt="Presencial" style="width: 20px; height: 20px;">
+        Dados para contato
+    </h3>
+
+    <div style="margin-bottom: 10px;">
+        <label for="nome-contato">Nome</label>
+        <input type="text" id="nome-contato" placeholder="Seu nome" style="border-color: #ff4d4f;">
+        <span style="color: #f10a0e; font-size: 13px; display: flex; align-items: center; gap: 5px;">
+            <img src="icons/esclamaçao.svg" alt="Atenção" style="width: 15px; height: 15px; filter: invert(17%) sepia(99%) saturate(7493%) hue-rotate(358deg) brightness(97%) contrast(119%);">
+            Campo obrigatorio
+        </span>
+    </div>
+
+    <label for="contato">E-mail</label>
+    <div style="display: flex; gap: 54px; align-items: flex-end;">
+        <div style="display: flex; flex-direction: column; flex:1;">
+            <input type="email" id="contato" placeholder="seuemail@exemplo.com">
+        </div>
+        <div style="display: flex; flex-direction: column; flex:1;">
+            <label for="telefone" style="margin-bottom: 2px;">Telefone</label>
+            <input type="tel" id="telefone" placeholder="(99) 99999-9999">
+        </div>
+    </div>
+
+    <div class="termo-uso-checkbox align-start">
+      <label class="checkbox-label">
+        <input type="checkbox" id="aceite-termos" class="custom-checkbox">
+        <span>
+          Eu li e concordo com os 
+          <a href="#">Termos de Uso</a> e 
+          <a href="#">Política de Privacidade</a>.
+        </span>
+      </label>
+    </div>
+
+    <div class="termo-uso-checkbox align-center">
+      <label class="checkbox-label">
+        <input type="checkbox" id="aceito-email" class="custom-checkbox">
+        Aceito receber atualizações e promoções por e-mail
+      </label>
+    </div>
+    <div class="termo-uso-checkbox align-center">
+      <label class="checkbox-label">
+        <input type="checkbox" id="aceito-sms" class="custom-checkbox">
+        Aceito receber atualizações e promoções por SMS
+      </label>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 32px;">
+      <button class="btn-gerar-convite">
+        <img src="icons/ingresso.svg" alt="Gerar convite">
+        Gerar convite
+      </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+document.getElementById('toggle-tema').addEventListener('change', function() {
+    const body = document.body;
+    const label = document.getElementById('tema-label');
+    if (this.checked) {
+        body.classList.add('tema-branco');
+        label.textContent = 'Branco';
+    } else {
+        body.classList.remove('tema-branco');
+        label.textContent = 'Escuro';
+    }
+});
+
+// Checkbox customizado com ícone checket.svg
+function toggleCheckIcon(checkboxId, iconId) {
+  const checkbox = document.getElementById(checkboxId);
+  const icon = document.getElementById(iconId);
+  if (checkbox.checked) {
+    icon.style.filter = "none";
+    icon.style.background = "#5b6ef8";
+    icon.style.borderColor = "#5b6ef8";
+  } else {
+    icon.style.filter = "grayscale(1) brightness(2)";
+    icon.style.background = "#fff";
+    icon.style.borderColor = "#5b6ef8";
+  }
+}
+['aceite-termos','aceito-email','aceito-sms'].forEach((id, i) => {
+  const iconId = ['check-termos','check-email','check-sms'][i];
+  const checkbox = document.getElementById(id);
+  const icon = document.getElementById(iconId);
+  // Inicialmente desmarcado
+  icon.style.filter = "grayscale(1) brightness(2)";
+  icon.style.background = "#fff";
+  icon.style.borderColor = "#5b6ef8";
+  checkbox.addEventListener('change', function() {
+    toggleCheckIcon(id, iconId);
+  });
+  // Clique no ícone também marca/desmarca
+  icon.addEventListener('click', function() {
+    checkbox.checked = !checkbox.checked;
+    toggleCheckIcon(id, iconId);
+  });
+});
+</script>
+</body>
+</html>

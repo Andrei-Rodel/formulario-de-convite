@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 40px auto;
+  background: #181820;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  padding: 40px 40px 32px 40px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.tipo {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tipo button {
+  flex: 1;
+  padding: 10px 12px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tipo button.active {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.tipo button img {
+  margin-right: 6px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.cores {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.cores button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.temas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 15px;
+  justify-content: flex-start;
+}
+
+.tema-card {
+  min-width: 0;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tema-card img {
+  width: 100%;
+  max-width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.tema-card p {
+  font-size: 18px;
+  margin: 14px 0 0;
+}
+
+.termo-uso-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 10px 0;
+  font-size: 13px;
+  color: #888;
+}
+
+.termo-uso-checkbox input[type="checkbox"] {
+  accent-color: #007bff;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.data-evento {
+  display: flex;
+  gap: 30px;
+}
+
+body.tema-branco {
+  background: #f6f6f6;
+  color: #222;
+}
+body.tema-branco .container {
+  background: #fff;
+  color: #222;
+}
+body.tema-branco input,
+body.tema-branco textarea {
+  background: #f6f6f6;
+  color: #222;
+  border: 1px solid #ccc;
+}
+body.tema-branco .cores button {
+  border: 1px solid #eee;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #888;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: .4s;
+  border-radius: 50%;
+}
+.switch input:checked + .slider {
+  background-color: #007bff;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.estilo-tema-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 10px 0;
+}
+
+.btn-gerar-convite {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #5b6ef8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: auto;
+}
+.termo-uso-checkbox.align-center {
+  justify-content: space-between;
+}
